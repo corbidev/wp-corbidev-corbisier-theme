@@ -9,13 +9,13 @@
     "site": "CertKit",
     "lien": "https://generator.corbisier.fr/",
     "description": "Un générateur de certificats, clés et jetons",
-    "ico": "https://corbisier.fr/logo/icon_certkit.png"
+    "ico": "https://generator.corbisier.fr/assets/certkit_icon.png"
   },
 {
     "site": "Mon CV",
     "lien": "https://cv.corbisier.fr/",
     "description": "Mon curriculum vitæ",
-    "ico": "https://corbisier.fr/logo/icon_corbidev.png"
+    "ico": "https://cv.corbisier.fr/assets/icon_corbidev.png"
   }
 
 

@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Template principal du thème CorbiDev Corbisier.
- * Affiche la grille de sites définis dans ancien-sites/sites.json.
+ * Affiche la grille de sites définis dans le fichier sites.json du thème.
  */
 
-// On réutilise le JSON existant de l'ancien site : wp_debrock/ancien-sites/sites.json
-$sitesFile = dirname(dirname(ABSPATH)) . '/ancien-sites/sites.json';
+// Fichier JSON local au thème : wp-content/themes/wp-corbidev-corbisier-theme/sites.json
+$sitesFile = get_template_directory() . '/sites.json';
 $sites = [];
 
 if (file_exists($sitesFile)) {
