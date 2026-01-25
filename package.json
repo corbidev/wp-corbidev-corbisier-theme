@@ -1,0 +1,13 @@
+{
+  "name": "wp-corbidev-corbisier-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tooling front minimal pour le thème WordPress CorbiDev Corbisier (build Tailwind CSS).",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i ./assets/css/app.src.css -o ./assets/css/app.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i ./assets/css/app.src.css -o ./assets/css/app.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

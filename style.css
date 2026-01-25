@@ -1,0 +1,10 @@
+/*
+Theme Name: CorbiDev Corbisier
+Theme URI: https://corbisier.fr/
+Description: Thème WordPress CorbiDev pour le site corbisier.fr, branché sur le Kernel wp-corbidev-kernel-theme.
+Author: CorbiDev
+Version: 1.0.0
+Text Domain: wp-corbidev-corbisier-theme
+*/
+
+/* Le gros du style est géré par Tailwind (CDN en dev/staging, CSS compilé en prod). */
