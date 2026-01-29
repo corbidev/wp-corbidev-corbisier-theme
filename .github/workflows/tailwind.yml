@@ -1,0 +1,51 @@
+name: Build & Deploy Tailwind CSS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Build Tailwind
+        run: |
+          npx tailwindcss \
+            -i assets/css/app.src.css \
+            -o assets/css/app.css
+          npx tailwindcss \
+            -i assets/css/app.src.css \
+            -o assets/css/app.min.css \
+            --minify \
+            --sourcemap
+
+      - name: Upload CSS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tailwind-css
+          path: web/app/themes/**/assets/css/*.css*
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: tailwind-css
+          path: web/app/themes/
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz web/ user@server:/path/to/wp_debrock/web/
