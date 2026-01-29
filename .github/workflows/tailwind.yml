@@ -1,51 +1,53 @@
-name: Build & Deploy Tailwind CSS
+name: Build Tailwind CSS
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+    paths-ignore:
+      - 'assets/css/*.css'
+      - 'assets/css/*.css.map'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'assets/css/**'
+      - '**/*.php'
+      - '**/*.js'
+      - '**/*.html'
+      - '**/*.twig'
+      - 'tailwind.config.js'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - run: npm ci
 
       - name: Build Tailwind
         run: |
           npx tailwindcss \
             -i assets/css/app.src.css \
             -o assets/css/app.css
+
           npx tailwindcss \
             -i assets/css/app.src.css \
             -o assets/css/app.min.css \
             --minify \
             --sourcemap
 
-      - name: Upload CSS artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: tailwind-css
-          path: web/app/themes/**/assets/css/*.css*
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: tailwind-css
-          path: web/app/themes/
-
-      - name: Deploy via rsync
+      - name: Commit generated CSS
         run: |
-          rsync -avz web/ user@server:/path/to/wp_debrock/web/
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add assets/css/app.css assets/css/app.min.css assets/css/app.min.css.map
+          git commit -m "build: tailwind css" || echo "No changes"
+          git push
