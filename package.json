@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "npm run build-dev:css && npm run build-min:css",
   "build-dev:css": "tailwindcss -c tailwind.config.js -i ./assets/css/app.src.css -o ./assets/css/app.css",
-  "build-min:css": "tailwindcss -c tailwind.config.js -i ./assets/css/app.src.css -o ./assets/css/app.min.css --minify --sourcemap"
+  "build-min:css": "tailwindcss -c tailwind.config.js -i ./assets/css/app.src.css -o ./assets/css/app.min.css --minify --sourcemap",
     "watch:css": "tailwindcss -c tailwind.config.js -i ./assets/css/app.src.css -o ./assets/css/app.css --watch"
   },
   "devDependencies": {
