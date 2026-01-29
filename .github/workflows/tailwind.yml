@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - 'assets/css/*.css'
-      - 'assets/css/*.css.map'
 
   pull_request:
     branches:
@@ -36,10 +33,3 @@ jobs:
         run: |
           npm install
           npm run build:css
-      - name: Commit generated CSS
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add assets/css/app.css assets/css/app.min.css assets/css/app.min.css.map
-          git commit -m "build: tailwind css" || echo "No changes"
-          git push
