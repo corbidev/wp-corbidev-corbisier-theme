@@ -34,11 +34,11 @@ jobs:
 
       - name: Build Tailwind
         run: |
-          npx tailwindcss \
+          npx tailwindcss@latest \
             -i assets/css/app.src.css \
             -o assets/css/app.css
 
-          npx tailwindcss \
+          npx tailwindcss@latest \
             -i assets/css/app.src.css \
             -o assets/css/app.min.css \
             --minify \
