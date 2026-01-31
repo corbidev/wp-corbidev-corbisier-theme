@@ -1,1 +1,0 @@
-# wp-corbidev-corbisier-theme
