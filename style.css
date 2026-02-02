@@ -1,10 +1,7 @@
 /*
-Theme Name: CorbiDev Corbisier
-Theme URI: https://corbisier.fr/
-Description: Thème WordPress CorbiDev pour le site corbisier.fr, branché sur le Kernel wp-corbidev-kernel-theme.
-Author: CorbiDev
-Version: 1.0.0
-Text Domain: wp-corbidev-corbisier-theme
+Theme Name: Corbidev Corbisier Theme (Kernel + Vite)
+Theme URI: https://corbidev.fr
+Author: Corbidev
+Version: 1.0
+Description: Modern WordPress theme using Kernel architecture, Vite, Vue 3 and TailwindCSS
 */
-
-/* Le gros du style est géré par Tailwind (CDN en dev/staging, CSS compilé en prod). */
