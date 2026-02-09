@@ -1,3 +1,4 @@
+import '../css/app.css'
 import { createApp } from 'vue'
 import SitesGrid from './components/SitesGrid.vue'
 
