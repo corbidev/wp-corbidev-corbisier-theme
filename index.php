@@ -1,5 +1,1 @@
-<?php get_header(); ?>
-
-<div id="app"></div>
-
-<?php get_footer(); ?>
+<?php if (!defined('ABSPATH')) exit; get_header(); get_footer();
