@@ -1,10 +1,10 @@
 export default {
+  darkMode: 'class',
   content: [
-    "./**/*.php",
-    "./resources/**/*.{js,vue}"
+    './assets/js/**/*.{js,vue}'
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }

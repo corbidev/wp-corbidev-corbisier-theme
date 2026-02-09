@@ -1,7 +1,13 @@
 /*
-Theme Name: Corbidev Corbisier Theme (Kernel + Vite)
-Theme URI: https://corbidev.fr
-Author: Corbidev
-Version: 1.0
-Description: Modern WordPress theme using Kernel architecture, Vite, Vue 3 and TailwindCSS
+Theme Name: CorbiDev – Corbisier Theme
+Theme URI: https://github.com/CorbiDev/wp-corbidev-corbisier-theme
+Author: CorbiDev
+Author URI: https://github.com/CorbiDev
+Description: Child theme for CorbiDev starter theme.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 8.4
+Text Domain: corbidevtheme
+Template: wp-corbidev-theme-starter
 */
