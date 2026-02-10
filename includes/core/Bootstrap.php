@@ -35,6 +35,8 @@ final class Bootstrap {
     }
 
     public static function mountApp(): void {
-        echo '<div id="corbidev-sites-app"></div>';
+        echo '<div id="corbidev-sites-app">
+bonjour
+</div>';
     }
 }
