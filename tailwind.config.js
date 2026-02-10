@@ -5,8 +5,6 @@ export default {
     './assets/css/**/*.css',
     './**/*.php'
   ],
-  theme: {
-    extend: {}
-  },
+  theme: { extend: {} },
   plugins: []
 }
