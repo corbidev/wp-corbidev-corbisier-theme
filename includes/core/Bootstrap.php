@@ -9,21 +9,21 @@ final class Bootstrap {
     }
 
     public static function enqueueAssets(): void {
-        $dist = get_stylesheet_directory() . '/dist';
-        $uri  = get_stylesheet_directory_uri() . '/dist';
-        $manifest = $dist . '/manifest.json';
-        if (!file_exists($manifest)) return;
+        $distPath = get_stylesheet_directory() . '/dist';
+        $distUri  = get_stylesheet_directory_uri() . '/dist';
+        $manifestFile = $distPath . '/.vite/manifest.json';
+        if (!file_exists($manifestFile)) return;
 
-        $data = json_decode(file_get_contents($manifest), true);
-        if (!isset($data['assets/js/app.js'])) return;
+        $manifest = json_decode(file_get_contents($manifestFile), true);
+        if (!isset($manifest['assets/js/app.js'])) return;
 
-        $entry = $data['assets/js/app.js'];
+        $entry = $manifest['assets/js/app.js'];
 
         if (!empty($entry['css'][0])) {
-            wp_enqueue_style('corbidev-style', $uri . '/' . $entry['css'][0], [], null);
+            wp_enqueue_style('corbidev-style', $distUri . '/' . $entry['css'][0], [], null);
         }
 
-        wp_enqueue_script('corbidev-app', $uri . '/' . $entry['file'], [], null, true);
+        wp_enqueue_script('corbidev-app', $distUri . '/' . $entry['file'], [], null, true);
 
         add_filter('script_loader_tag', function ($tag, $handle) {
             return $handle === 'corbidev-app'
@@ -35,8 +35,6 @@ final class Bootstrap {
     }
 
     public static function mountApp(): void {
-        echo '<div id="corbidev-sites-app">
-bonjour
-</div>';
+        echo '<div id="corbidev-sites-app"></div>';
     }
 }

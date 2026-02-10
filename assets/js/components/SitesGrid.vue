@@ -3,10 +3,9 @@ defineProps({ sites: Array })
 </script>
 
 <template>
-  <div style="border:2px solid green">
-    Vue is mounted
-    <pre>{{ sites }}</pre>
-  </div>
+  <section class="max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6 bg-gray-100 dark:bg-black min-h-screen">
+    <SiteCard v-for="site in sites" :key="site.lien" :site="site" />
+  </section>
 </template>
 
 <script>
