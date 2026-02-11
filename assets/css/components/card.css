@@ -3,7 +3,8 @@
     @apply max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6 bg-gray-100 dark:bg-black min-h-screen;
   }
   .card {
-    background-color: var(--color-surface);
+    background-color: red;
+
     @apply rounded-xl shadow-md p-6 transition duration-300;
   }
 
