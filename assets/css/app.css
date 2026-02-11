@@ -1,10 +1,11 @@
+@import './components/base.css';
+@import './components/card.css';
+@import './components/button.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer{
-@import './components/base.css';
-@import './components/card.css';
-@import './components/button.css';
-}
+
+
 
