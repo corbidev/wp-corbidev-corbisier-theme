@@ -3,18 +3,23 @@
     "site": "Lescorbycats",
     "lien": "https://lescorbycats.fr",
     "description": "Informations et ventes de chatons Mainecoon",
-    "ico": "https://lescorbycats.fr/favicon.ico"
+    "ico": "https://lescorbycats.fr/empreinte-chat-3d.png.webp"
   },
-  {
+{
     "site": "CertKit",
-    "lien": "https://certkit.fr",
-    "description": "Un g\u00e9n\u00e9rateur de certificats, cl\u00e9s et jetons",
-    "ico": "https://certkit.fr/favicon.ico"
+    "lien": "https://generator.corbisier.fr/",
+    "description": "Un générateur de certificats, clés et jetons",
+    "ico": "https://generator.corbisier.fr/assets/certkit_icon.png"
   },
-  {
+{
     "site": "Mon CV",
-    "lien": "#",
-    "description": "Mon curriculum vitae",
-    "ico": "https://via.placeholder.com/64"
+    "lien": "https://cv.corbisier.fr/",
+    "description": "Mon curriculum vitæ",
+    "ico": "https://cv.corbisier.fr/assets/icon_corbidev.png"
   }
+
+
+
 ]
+
+
