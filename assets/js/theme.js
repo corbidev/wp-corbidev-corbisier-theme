@@ -1,1 +1,16 @@
-const K='corbisier-theme';export function initTheme(){const s=localStorage.getItem(K);if(s){setTheme(s);return;}setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}export function toggleTheme(){setTheme(document.documentElement.classList.contains('dark')?'light':'dark');}function setTheme(t){document.documentElement.classList.toggle('dark',t==='dark');localStorage.setItem(K,t);}
+export function toggleTheme() {
+    const html = document.documentElement
+    html.classList.toggle('dark')
+
+    localStorage.setItem(
+        'theme',
+        html.classList.contains('dark') ? 'dark' : 'light'
+    )
+}
+
+export function initTheme() {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'dark') {
+        document.documentElement.classList.add('dark')
+    }
+}

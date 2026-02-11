@@ -1,30 +1,20 @@
-.cards-grid {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+@layer components {
+
+  .card {
+    background-color: var(--color-surface);
+    @apply rounded-xl shadow-md p-6 transition duration-300;
   }
 
-.card {
-    @apply relative rounded-2xl p-6 flex flex-col gap-4
-           border
-           transition duration-300 ease-out;
-    background-color: rgb(15 23 42); /* slate-900 */
-    border-color: rgb(30 41 59);     /* slate-800 */
+  .card:hover {
+    @apply shadow-lg;
   }
 
-.card:hover {
-    background-color: rgb(30 41 59); /* slate-800 */
-    transform: translateY(-2px);
+  .card-title {
+    @apply text-xl font-semibold mb-2;
   }
 
-.card-icon {
-    @apply h-14 w-14 rounded-xl flex items-center justify-center;
-    background-color: rgb(30 41 59);
+  .card-description {
+    @apply text-sm opacity-80;
   }
 
-.card-title {
-    @apply text-lg font-semibold;
-  }
-
-.card-desc {
-    @apply text-sm;
-    color: rgb(148 163 184); /* slate-400 */
-  }
+}

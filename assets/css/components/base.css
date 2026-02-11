@@ -1,19 +1,34 @@
+@layer base {
 
-  html {
-    background-color: rgb(2 6 23); /* slate-950 */
-    color: white;
+  :root {
+    --color-bg: theme('colors.background.light');
+    --color-surface: theme('colors.surface.light');
+    --color-text: theme('colors.text.light');
+    --color-primary: theme('colors.primary.DEFAULT');
   }
 
-  html:not(.dark) {
-    background-color: white;
-    color: rgb(15 23 42);
+  .dark {
+    --color-bg: theme('colors.background.dark');
+    --color-surface: theme('colors.surface.dark');
+    --color-text: theme('colors.text.dark');
+    --color-primary: theme('colors.primary.light');
   }
 
-  html:not(.dark) .card {
-    background-color: rgb(248 250 252);
-    border-color: rgb(226 232 240);
+  body {
+    @apply min-h-screen transition-colors duration-300;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+}
+
+@layer components {
+
+  .layout-container {
+    @apply max-w-6xl mx-auto px-6 py-12;
   }
 
-  html:not(.dark) .card-desc {
-    color: rgb(71 85 105);
+  .section-title {
+    @apply text-3xl font-bold mb-8;
   }
+
+}
