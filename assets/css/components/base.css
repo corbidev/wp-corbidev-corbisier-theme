@@ -1,0 +1,19 @@
+
+  html {
+    background-color: rgb(2 6 23); /* slate-950 */
+    color: white;
+  }
+
+  html:not(.dark) {
+    background-color: white;
+    color: rgb(15 23 42);
+  }
+
+  html:not(.dark) .card {
+    background-color: rgb(248 250 252);
+    border-color: rgb(226 232 240);
+  }
+
+  html:not(.dark) .card-desc {
+    color: rgb(71 85 105);
+  }
